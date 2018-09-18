@@ -21,3 +21,19 @@ https://blog.csdn.net/qq_34364995/article/details/80518193
 https://shenjie1993.gitbooks.io/leetcode-python/155%20Min%20Stack.html
 
 法2是比较好的解法
+
+细节注意:
+```
+def push(self, x):
+      """
+      :type x: int
+      :rtype: void
+      """
+      self.stack.append(x)
+      if not self.minStack:
+          self.minStack.append(x)
+      else:
+          # 注意要小于等于
+          if x <= self.minStack[-1]:
+              self.minStack.append(x)
+```
